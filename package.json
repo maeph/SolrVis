@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server"
   },
   "author": "zbyszko.papierski@gmail.com",
   "license": "ISC",
@@ -19,7 +20,10 @@
     "bootstrap": "^3.3.7",
     "cytoscape": "^2.7.10",
     "http-server": "^0.9.0",
-    "es6-rest-client": "3.0.4",
-    "webpack": "^1.13.2"
+    "isomorphic-fetch": "^2.2.1",
+    "json-loader": "^0.5.4",
+    "node-rest-client": "^2.0.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   }
 }

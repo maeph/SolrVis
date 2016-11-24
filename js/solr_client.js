@@ -1,22 +1,16 @@
-import restClient, { SETTINGS } from '../node_modules/es6-rest-client/dist/client.es6';
+import fetch from 'isomorphic-fetch'
 
 export default class StreamingExprClient {
     constructor(url) {
-
-        this.url = url;
+        this.baseUrl = url;
 
     }
 
-    getGraphData(expr, callback) {
-        restClient[SETTINGS] ({
-            method: 'POST',
-            baseURI: this.url,
-            params: {expr: expr}
-        });
+    getGraphData(expr) {
 
-        restClient().then((response) => {
-            callback(response.json())
-        })
+         return fetch(`${this.baseUrl}?expr=${expr}`)
+            .then(response => response.json())
+
 
     }
 }

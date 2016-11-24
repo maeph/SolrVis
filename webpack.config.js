@@ -1,6 +1,8 @@
  var path = require('path');
  var webpack = require('webpack');
 
+
+
  module.exports = {
      entry: './js/main.js',
      output: {
@@ -15,7 +17,8 @@
                  query: {
                      presets: ['es2015']
                  }
-             }
+             },
+             { test: /\.json$/, loader: 'json-loader' }
          ]
      },
      stats: {

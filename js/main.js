@@ -38,11 +38,10 @@ function requestNewGraph() {
     let expr = document.getElementById('expr').value;
     let path = document.getElementById('path').value;
     let client = new SongLikesClient(path);
-    console.log(path);
 
     cy.remove(cy.elements("node"));
-    client.getGraphData(expr,
-        (response) => response.then(
+    client.getGraphData(expr)
+        .then(
             (result) => {
                 const nodes = result['result-set'].docs.filter(node => typeof node.node != 'undefined');
 
@@ -78,7 +77,7 @@ function requestNewGraph() {
                     name: 'breadthfirst'
                 });
                 cy.fit();
-            })
+            }
     );
 }
 
